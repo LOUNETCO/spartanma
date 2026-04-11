@@ -93,8 +93,21 @@
     .map-wrap{max-width:753px;margin:18px auto 0;background:#fff}
     .map-wrap iframe{display:block;width:100%;height:324px;border:0}
     .back-top{display:inline-block;color:#fff;font-size:25px;line-height:1;margin-top:11px}
+
     .seo-links{background:#eef2ff;padding:18px 35px;text-align:center;border-top:1px solid #dbe3ff;border-bottom:1px solid #dbe3ff}
     .seo-links a{display:inline-block;margin:7px 14px;color:#24357f;font-size:14px;font-weight:600}
+
+    .seo-boost{background:#fff;padding:38px 35px;border-bottom:1px solid #e7ecfa}
+    .seo-boost-inner{max-width:1200px;margin:0 auto;text-align:center}
+    .seo-boost h2{font-size:30px;font-weight:600;color:#24357f;margin-bottom:12px}
+    .seo-boost p{font-size:15px;line-height:1.9;color:#4b4b4b;max-width:980px;margin:0 auto 22px}
+    .seo-boost-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .seo-boost-card{background:#f7f9ff;border:1px solid #dbe3ff;padding:20px 16px;transition:transform .2s ease,box-shadow .2s ease}
+    .seo-boost-card:hover{transform:translateY(-4px);box-shadow:0 14px 24px rgba(36,53,127,.12)}
+    .seo-boost-card h3{font-size:18px;color:#24357f;margin-bottom:8px}
+    .seo-boost-card p{font-size:13px;line-height:1.7;color:#5a5a5a;margin-bottom:10px}
+    .seo-boost-card a{display:inline-block;color:#ce503d;font-size:13px;font-weight:600}
+
     .footer{background:#24357f;color:#fff;text-align:center;font-size:11px;padding:9px 18px 18px}
 
     @media (max-width: 1200px){
@@ -102,8 +115,9 @@
       .chat-box{display:none}
       .hero{height:630px}
       .intro-card{width:calc(100% - 70px)}
-      .services-grid{max-width:100%;}
+      .services-grid{max-width:100%}
       .nav{gap:21px;flex-wrap:wrap;white-space:normal}
+      .seo-boost-grid{grid-template-columns:repeat(2,1fr)}
     }
     @media (max-width: 920px){
       .header-center{flex-direction:column;gap:25px}
@@ -115,6 +129,7 @@
       .services-grid{grid-template-columns:1fr;max-width:490px}
       .services{background-image:linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.08)),url('nsplsh_9636007f2ca44c92a6c50ad2f8012af1~mv2.avif');background-position:top center,center center;background-size:100% 245px,cover;min-height:auto}
       .seo-links a{display:block;margin:11px 0;font-size:16px}
+      .seo-boost-grid{grid-template-columns:1fr}
       .floating-wa{width:50px;height:50px;font-size:22px}
     }
   </style>
@@ -268,11 +283,50 @@
     <a href="conserto-videogame-rj.html">Conserto de Videogame RJ</a>
   </section>
 
+  <section class="seo-boost" aria-label="Serviços mais buscados no Rio de Janeiro">
+    <div class="seo-boost-inner">
+      <h2>Serviços mais buscados no Rio de Janeiro</h2>
+      <p>
+        Se você procura atendimento especializado no Rio de Janeiro, conheça também nossas páginas dedicadas para
+        <a href="conserto-notebook-rj.html">conserto de notebook</a>,
+        <a href="conserto-computador-rj.html">conserto de computador</a>,
+        <a href="conserto-macbook-rj.html">conserto de Macbook</a> e
+        <a href="conserto-videogame-rj.html">conserto de videogame</a>.
+      </p>
+
+      <div class="seo-boost-grid">
+        <article class="seo-boost-card">
+          <h3>Conserto de Notebook RJ</h3>
+          <p>Soluções para notebook lento, travando, aquecendo ou com falhas de desempenho.</p>
+          <a href="conserto-notebook-rj.html">Acessar página</a>
+        </article>
+
+        <article class="seo-boost-card">
+          <h3>Conserto de Computador RJ</h3>
+          <p>Atendimento para computador com lentidão, instabilidade e queda de performance.</p>
+          <a href="conserto-computador-rj.html">Acessar página</a>
+        </article>
+
+        <article class="seo-boost-card">
+          <h3>Conserto de Macbook RJ</h3>
+          <p>Atendimento especializado para Macbook com foco em estabilidade e melhor experiência de uso.</p>
+          <a href="conserto-macbook-rj.html">Acessar página</a>
+        </article>
+
+        <article class="seo-boost-card">
+          <h3>Conserto de Videogame RJ</h3>
+          <p>Soluções para consoles com falhas, aquecimento, travamentos e perda de desempenho.</p>
+          <a href="conserto-videogame-rj.html">Acessar página</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">© 2026 por Spartan MultiAssistência.</footer>
 
   <a class="floating-wa" href="https://wa.me/552131741531" aria-label="WhatsApp">◔</a>
+
   <script>
-    // Registra Service Worker (cache básico)
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('sw.js').catch(() => {});
