@@ -19,17 +19,15 @@
     .topbar{background:#f4f6fb;border-bottom:1px solid #d5dff0;color:#2a2a2a;text-align:center;font-size:12px;padding:6px 10px}
 
     .header{background:#fff;border-bottom:1px solid #e7e7e7;position:sticky;top:0;z-index:1000}
-    .header-inner{max-width:1700px;margin:0 auto;min-height:82px;padding:0 28px;display:grid;grid-template-columns:150px 1fr 150px;align-items:center}
-    .spartan-box{position:fixed;top:34px;left:14px;z-index:1100;width:84px;border:4px solid #273d8e;color:#273d8e;font-size:13px;font-weight:700;line-height:1;text-align:center;padding:6px 7px;background:#fff;text-transform:uppercase;box-shadow:0 2px 8px rgba(0,0,0,.08)}
-    .header-center{display:flex;align-items:center;justify-content:center;gap:34px}
-    .header-logo{width:42px;height:42px;object-fit:contain}
-    .nav{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap}
+    .header-inner{max-width:1700px;margin:0 auto;min-height:82px;padding:0 28px;display:flex;align-items:center;justify-content:center;position:relative}
+    .spartan-box{position:fixed;top:34px;left:14px;z-index:1100;width:68px;border:4px solid #273d8e;color:#273d8e;font-size:12px;font-weight:700;line-height:1;text-align:center;padding:5px 6px;background:#fff;text-transform:uppercase;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+    .header-center{display:flex;align-items:center;justify-content:center;gap:24px}
+    .header-logo{width:42px;height:42px;object-fit:contain;flex:0 0 auto}
+    .nav{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:nowrap;white-space:nowrap}
     .nav a{font-size:11px;font-weight:600;color:#24357f;transition:color .2s ease}
     .nav a.active,.nav a:hover{color:#ce503d}
 
     .hero{position:relative;height:455px;background:url('f9b47f103593419f828e0c802e211549.avif') center center/cover no-repeat}
-
-    .social-dots{display:none}
 
     .intro{position:relative;background:#ececec;min-height:300px}
     .intro-band{height:300px;background:url('nsplsh_665773543350706f452d41~mv2_d_3000_2000_s_2.avif') center center/cover no-repeat;position:relative}
@@ -59,11 +57,8 @@
     .chat-person span{display:block;font-size:5.8px;color:#6a6a6a}
     .status{display:inline-block;margin-top:2px;background:#48d16d;color:#fff;font-size:5.2px;padding:1px 4px;border-radius:3px}
 
-    .floating-wa,.floating-ig{position:fixed;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;box-shadow:0 8px 18px rgba(0,0,0,.18);z-index:88;transition:transform .2s ease}
-    .floating-wa:hover,.floating-ig:hover{transform:translateY(-2px) scale(1.03)}
-    .floating-wa{right:10px;bottom:10px;left:auto;background:#25d366;font-size:14px}
-    .floating-ig{right:10px;bottom:10px;background:#d94ac7;font-size:14px}
-    .direct-box{display:none}
+    .floating-wa{position:fixed;right:10px;bottom:10px;left:auto;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;box-shadow:0 8px 18px rgba(0,0,0,.18);z-index:88;transition:transform .2s ease;background:#25d366;font-size:14px}
+    .floating-wa:hover{transform:translateY(-2px) scale(1.03)}
 
     .services{position:relative;min-height:520px;background-image:linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.08)),url('nsplsh_9636007f2ca44c92a6c50ad2f8012af1~mv2.avif'),url('nsplsh_284fef7a803d4d548d2db79abe9bbd26~mv2.avif'),url('nsplsh_284fef7a803d4d548d2db79abe9bbd26~mv2.avif');background-repeat:no-repeat,no-repeat,no-repeat,no-repeat;background-position:top center,top center,left bottom,right bottom;background-size:100% 170px,cover,50% calc(100% - 170px),50% calc(100% - 170px);padding:16px 22px 24px}
     .services::before,.reviews::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.08)}
@@ -93,14 +88,15 @@
     .footer{background:#24357f;color:#fff;text-align:center;font-size:6px;padding:5px 10px 10px}
 
     @media (max-width: 1200px){
-      .header-inner{grid-template-columns:1fr;height:auto;gap:14px;padding:14px 22px}
-      .chat-box,.social-dots,.direct-box{display:none}
+      .header-inner{height:auto;gap:14px;padding:14px 22px}
+      .chat-box{display:none}
       .hero{height:360px}
       .intro-card{width:calc(100% - 40px)}
     }
     @media (max-width: 920px){
       .header-center{flex-direction:column;gap:14px}
-      .nav{gap:18px}
+      .nav{gap:18px;flex-wrap:wrap;white-space:normal}
+      .spartan-box{position:fixed;top:14px;left:10px}
       .intro-card{position:relative;left:auto;top:auto;transform:none;width:calc(100% - 24px);margin:-20px auto 16px;grid-template-columns:1fr}
       .intro-band{height:220px}
       .intro{min-height:auto}
@@ -112,9 +108,10 @@
 <body>
   <div class="topbar">Este site foi criado em HTML próprio para publicação gratuita.</div>
 
+  <a class="spartan-box" href="#home" aria-label="Voltar ao topo">SPARTAN</a>
+
   <header class="header">
     <div class="header-inner">
-      <a class="spartan-box" href="#home" aria-label="Voltar ao topo">SPARTAN</a>
       <div class="header-center">
         <img class="header-logo" src="LOGO_SPARTAN.png" alt="Logo Spartan MultiAssistência">
         <nav class="nav">
@@ -125,11 +122,10 @@
           <a href="#blog">Blog</a>
         </nav>
       </div>
-      <div></div>
     </div>
   </header>
 
-    <section class="hero" id="home"></section>
+  <section class="hero" id="home"></section>
 
   <section class="intro" id="sobre">
     <div class="intro-band"></div>
@@ -155,28 +151,31 @@
       <small>Clique para falar com um dos nossos atendentes</small>
       <span class="close-x">×</span>
     </div>
+
     <div class="chat-list">
-      <a class="chat-person" href="https://wa.me/552131741531?text=Ol%C3%A1%2C%20quero%20falar%20com%20Andr%C3%A9">
+      <a class="chat-person" href="https://wa.me/552131741531?text=Ol%C3%A1%2C%20quero%20consertar%20meu%20PC%20Gamer">
         <div class="chat-avatar"></div>
         <div>
-          <strong>André</strong>
-          <span>Gerente</span>
+          <strong>Consertar PC Gamer</strong>
+          <span>Técnico 01</span>
           <span class="status">I’m Online</span>
         </div>
       </a>
-      <a class="chat-person" href="https://wa.me/552131741531?text=Ol%C3%A1%2C%20quero%20falar%20com%20Juliane">
+
+      <a class="chat-person" href="https://wa.me/552131741531?text=Ol%C3%A1%2C%20quero%20consertar%20meu%20Notebook%2FMacbook">
         <div class="chat-avatar"></div>
         <div>
-          <strong>Juliane</strong>
-          <span>Vendedora 01</span>
+          <strong>Consertar Notebook/Macbook</strong>
+          <span>Técnico 02</span>
           <span class="status">I’m Online</span>
         </div>
       </a>
-      <a class="chat-person" style="margin-bottom:0;" href="https://wa.me/552131741531?text=Ol%C3%A1%2C%20quero%20falar%20com%20Juliana">
+
+      <a class="chat-person" style="margin-bottom:0;" href="https://wa.me/552131741531?text=Ol%C3%A1%2C%20quero%20consertar%20meu%20VideoGame">
         <div class="chat-avatar"></div>
         <div>
-          <strong>Juliana</strong>
-          <span>Vendedora 02</span>
+          <strong>Consertar VideoGame</strong>
+          <span>Técnico 03</span>
           <span class="status">I’m Online</span>
         </div>
       </a>
@@ -245,9 +244,9 @@
     <a class="back-top" href="#home">⌃</a>
   </section>
 
-  <footer class="footer">© 2025 por Spartan MultiAssistência.</footer>
+  <footer class="footer">© 2026 por Spartan MultiAssistência.</footer>
 
   <a class="floating-wa" href="https://wa.me/552131741531" aria-label="WhatsApp">◔</a>
-  <a class="floating-ig" href="https://wa.me/552131741531?text=Ol%C3%A1%2C%20vim%20pelo%20site" target="_blank" aria-label="WhatsApp">◎</a>
 </body>
 </html>
+```
