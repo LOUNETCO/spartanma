@@ -29,9 +29,7 @@
 
     .hero{position:relative;height:455px;background:url('f9b47f103593419f828e0c802e211549.avif') center center/cover no-repeat}
 
-    .social-dots{position:fixed;right:18px;top:190px;display:flex;flex-direction:column;gap:14px;z-index:80}
-    .social-dots a{width:10px;height:10px;border-radius:50%;display:block}
-    .facebook{background:#1877f2}.instagram{background:#d62976}.whatsapp-dot{background:#25d366}
+    .social-dots{display:none}
 
     .intro{position:relative;background:#ececec;min-height:300px}
     .intro-band{height:300px;background:url('nsplsh_665773543350706f452d41~mv2_d_3000_2000_s_2.avif') center center/cover no-repeat;position:relative}
@@ -63,9 +61,9 @@
 
     .floating-wa,.floating-ig{position:fixed;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;box-shadow:0 8px 18px rgba(0,0,0,.18);z-index:88;transition:transform .2s ease}
     .floating-wa:hover,.floating-ig:hover{transform:translateY(-2px) scale(1.03)}
-    .floating-wa{left:10px;bottom:10px;background:#25d366;font-size:14px}
+    .floating-wa{right:10px;bottom:10px;left:auto;background:#25d366;font-size:14px}
     .floating-ig{right:10px;bottom:10px;background:#d94ac7;font-size:14px}
-    .direct-box{position:fixed;right:44px;top:405px;background:#fff;color:#666;border:1px solid #ececec;padding:7px 9px;font-size:7px;z-index:87;box-shadow:0 4px 10px rgba(0,0,0,.08)}
+    .direct-box{display:none}
 
     .services{position:relative;min-height:520px;background-image:linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.08)),url('nsplsh_9636007f2ca44c92a6c50ad2f8012af1~mv2.avif'),url('nsplsh_284fef7a803d4d548d2db79abe9bbd26~mv2.avif'),url('nsplsh_284fef7a803d4d548d2db79abe9bbd26~mv2.avif');background-repeat:no-repeat,no-repeat,no-repeat,no-repeat;background-position:top center,top center,left bottom,right bottom;background-size:100% 170px,cover,50% calc(100% - 170px),50% calc(100% - 170px);padding:16px 22px 24px}
     .services::before,.reviews::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.08)}
@@ -131,13 +129,7 @@
     </div>
   </header>
 
-  <div class="social-dots" aria-label="Redes sociais">
-    <a class="facebook" href="#" aria-label="Facebook"></a>
-    <a class="instagram" href="#" aria-label="Instagram"></a>
-    <a class="whatsapp-dot" href="https://wa.me/552131741531" aria-label="WhatsApp"></a>
-  </div>
-
-  <section class="hero" id="home"></section>
+    <section class="hero" id="home"></section>
 
   <section class="intro" id="sobre">
     <div class="intro-band"></div>
@@ -157,45 +149,39 @@
     </div>
   </section>
 
-<aside class="chat-box" aria-label="Atendimento WhatsApp">
-  <div class="chat-head">
-    Precisa de ajuda? Chame no Whatsapp!
-    <small>Clique para falar com um dos nossos atendentes</small>
-    <span class="close-x">×</span>
-  </div>
-
-  <div class="chat-list">
-    
-    <a class="chat-person" href="https://wa.me/552131741531?text=Ol%C3%A1%2C%20quero%20consertar%20meu%20PC%20Gamer">
-      <div class="chat-avatar"></div>
-      <div>
-        <strong>Consertar PC Gamer</strong>
-        <span>Técnico 01</span>
-        <span class="status">I’m Online</span>
-      </div>
-    </a>
-
-    <a class="chat-person" href="https://wa.me/552131741531?text=Ol%C3%A1%2C%20quero%20consertar%20meu%20Notebook%2FMacbook">
-      <div class="chat-avatar"></div>
-      <div>
-        <strong>Consertar Notebook/Macbook</strong>
-        <span>Técnico 02</span>
-        <span class="status">I’m Online</span>
-      </div>
-    </a>
-
-    <a class="chat-person" style="margin-bottom:0;" href="https://wa.me/552131741531?text=Ol%C3%A1%2C%20quero%20consertar%20meu%20VideoGame">
-      <div class="chat-avatar"></div>
-      <div>
-        <strong>Consertar VideoGame</strong>
-        <span>Técnico 03</span>
-        <span class="status">I’m Online</span>
-      </div>
-    </a>
-
-  </div>
-</aside>
-
+  <aside class="chat-box" aria-label="Atendimento WhatsApp">
+    <div class="chat-head">
+      Precisa de ajuda? Chame no Whatsapp!
+      <small>Clique para falar com um dos nossos atendentes</small>
+      <span class="close-x">×</span>
+    </div>
+    <div class="chat-list">
+      <a class="chat-person" href="https://wa.me/552131741531?text=Ol%C3%A1%2C%20quero%20falar%20com%20Andr%C3%A9">
+        <div class="chat-avatar"></div>
+        <div>
+          <strong>André</strong>
+          <span>Gerente</span>
+          <span class="status">I’m Online</span>
+        </div>
+      </a>
+      <a class="chat-person" href="https://wa.me/552131741531?text=Ol%C3%A1%2C%20quero%20falar%20com%20Juliane">
+        <div class="chat-avatar"></div>
+        <div>
+          <strong>Juliane</strong>
+          <span>Vendedora 01</span>
+          <span class="status">I’m Online</span>
+        </div>
+      </a>
+      <a class="chat-person" style="margin-bottom:0;" href="https://wa.me/552131741531?text=Ol%C3%A1%2C%20quero%20falar%20com%20Juliana">
+        <div class="chat-avatar"></div>
+        <div>
+          <strong>Juliana</strong>
+          <span>Vendedora 02</span>
+          <span class="status">I’m Online</span>
+        </div>
+      </a>
+    </div>
+  </aside>
 
   <section class="services" id="servicos">
     <div class="services-inner">
@@ -259,10 +245,9 @@
     <a class="back-top" href="#home">⌃</a>
   </section>
 
-  <footer class="footer">© 2026 por Spartan MultiAssistência.</footer>
+  <footer class="footer">© 2025 por Spartan MultiAssistência.</footer>
 
   <a class="floating-wa" href="https://wa.me/552131741531" aria-label="WhatsApp">◔</a>
-  <div class="direct-box">Chama no Direct!</div>
-  <a class="floating-ig" href="#" aria-label="Instagram">◎</a>
+  <a class="floating-ig" href="https://wa.me/552131741531?text=Ol%C3%A1%2C%20vim%20pelo%20site" target="_blank" aria-label="WhatsApp">◎</a>
 </body>
 </html>
