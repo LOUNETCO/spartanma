@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spartan MultiAssistência</title>
+  <meta name="description" content="Spartan MultiAssistência. Soluções especializadas para computadores, notebooks, dispositivos Apple, consoles e acessórios." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1f1f1f;
+      background: #fff;
+      line-height: 1.5;
+    }
+    a { text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .top-wix {
+      background: #f3f5fb;
+      border-bottom: 1px solid #d8dcef;
+      text-align: center;
+      font-size: 14px;
+      color: #202020;
+      padding: 10px 16px;
+    }
+
+    .header {
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #e7e7e7;
+    }
+    .header-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 26px;
+      gap: 20px;
+    }
+    .brand-box {
+      border: 5px solid #253b8f;
+      color: #253b8f;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+      padding: 6px 12px;
+      text-transform: uppercase;
+      background: #fff;
+    }
+    .center-brand {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-left: auto;
+    }
+    .logo-round {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #f6df97, #b68213 72%);
+      border: 3px solid #8c6716;
+      box-shadow: 0 2px 10px rgba(0,0,0,.12);
+      flex: 0 0 auto;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .nav a {
+      color: #24347d;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .nav a.active { color: #cf4f39; }
+
+    .hero {
+      position: relative;
+      min-height: 460px;
+      background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+    }
+    .social-fixed {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      z-index: 2;
+    }
+    .social-fixed a {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      display: block;
+    }
+    .facebook { background: #1877f2; }
+    .instagram { background: #d62976; }
+    .whatsapp { background: #25d366; }
+
+    .intro {
+      position: relative;
+      min-height: 560px;
+      overflow: hidden;
+    }
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 560px;
+    }
+    .intro-left {
+      background: url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+    }
+    .intro-right {
+      background: url('https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      filter: brightness(1.02);
+    }
+    .intro-card {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: min(920px, calc(100% - 40px));
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      background: #fff;
+      box-shadow: 0 14px 40px rgba(0,0,0,.16);
+      z-index: 3;
+    }
+    .intro-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+      background: #fff;
+    }
+    .intro-logo .logo-round {
+      width: 150px;
+      height: 150px;
+    }
+    .intro-text {
+      padding: 42px 46px;
+      background: #fff;
+    }
+    .intro-text h1 {
+      color: #24347d;
+      font-size: 64px;
+      line-height: .95;
+      font-weight: 300;
+      letter-spacing: -1px;
+    }
+    .intro-line {
+      width: 112px;
+      height: 4px;
+      background: #24347d;
+      margin: 28px 0 26px;
+    }
+    .intro-text p {
+      max-width: 580px;
+      color: #515151;
+      font-size: 20px;
+      line-height: 1.8;
+    }
+    .intro-buttons {
+      margin-top: 28px;
+      display: inline-flex;
+      box-shadow: 0 6px 16px rgba(0,0,0,.1);
+    }
+    .plus-btn {
+      background: #24347d;
+      color: #fff;
+      border: 0;
+      font-size: 28px;
+      padding: 14px 24px;
+      cursor: pointer;
+    }
+    .cta-btn {
+      background: #d4543d;
+      color: #fff;
+      border: 0;
+      font-size: 16px;
+      padding: 16px 34px;
+      cursor: pointer;
+    }
+
+    .chat-box {
+      position: absolute;
+      left: 18px;
+      bottom: 66px;
+      width: 220px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 22px rgba(0,0,0,.18);
+      overflow: hidden;
+      z-index: 5;
+    }
+    .chat-head {
+      background: #61d783;
+      color: #fff;
+      padding: 14px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .chat-head small {
+      display: block;
+      margin-top: 4px;
+      font-weight: 400;
+      opacity: .95;
+    }
+    .chat-list { padding: 10px; }
+    .chat-person {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      background: #f6f7fb;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 8px;
+    }
+    .chat-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #d0d5e8;
+      flex: 0 0 auto;
+    }
+    .chat-person strong { display: block; font-size: 13px; }
+    .chat-person span { display: block; font-size: 11px; color: #666; }
+    .online {
+      display: inline-block;
+      margin-top: 3px;
+      background: #61d783;
+      color: #fff;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .floating-whatsapp,
+    .floating-insta {
+      position: fixed;
+      bottom: 18px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      box-shadow: 0 10px 20px rgba(0,0,0,.18);
+      z-index: 999;
+    }
+    .floating-whatsapp {
+      left: 18px;
+      background: #25d366;
+    }
+    .floating-insta {
+      right: 18px;
+      background: #d04cc8;
+    }
+
+    .services {
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+      padding: 90px 20px 70px;
+    }
+    .services::before,
+    .reviews::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.18);
+    }
+    .services-inner,
+    .reviews-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 56px;
+      color: #d8ee4d;
+      font-weight: 700;
+      margin-bottom: 54px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .service-card {
+      background: rgba(255,255,255,.94);
+      padding: 22px 20px;
+      box-shadow: 0 12px 20px rgba(0,0,0,.12);
+      min-height: 210px;
+      border-bottom: 5px solid rgba(255,255,255,.45);
+    }
+    .service-card h3 {
+      color: #23357f;
+      font-size: 22px;
+      line-height: 1.15;
+      text-decoration: underline;
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+    .service-card p {
+      color: #444;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+    .read-more {
+      display: inline-block;
+      margin-top: 14px;
+      color: #dc6d59;
+      font-size: 14px;
+    }
+
+    .reviews {
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+      padding: 64px 20px 80px;
+    }
+    .google-rating {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+    .google-rating h3 {
+      font-size: 34px;
+      margin-bottom: 6px;
+    }
+    .google-rating p {
+      font-size: 16px;
+      opacity: .98;
+      margin-bottom: 14px;
+    }
+    .review-btn {
+      display: inline-block;
+      background: #4d83ff;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 22px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .review-card {
+      background: rgba(255,255,255,.95);
+      border-radius: 8px;
+      padding: 18px;
+      min-height: 176px;
+      color: #343434;
+    }
+    .review-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+    .stars {
+      color: #ffbf00;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .review-card p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .contact {
+      background: #27347b;
+      color: #fff;
+      text-align: center;
+      padding: 56px 20px 34px;
+    }
+    .contact h2 {
+      font-size: 48px;
+      font-weight: 400;
+      margin-bottom: 24px;
+    }
+    .whatsapp-btn {
+      display: inline-block;
+      background: #badf57;
+      color: #fff;
+      font-size: 18px;
+      padding: 12px 28px;
+      border-radius: 4px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+    .contact p,
+    .contact address {
+      font-style: normal;
+      font-size: 14px;
+      line-height: 1.75;
+      margin-bottom: 8px;
+    }
+    .map-wrap {
+      max-width: 520px;
+      margin: 26px auto 0;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.2);
+    }
+    .map-wrap iframe {
+      width: 100%;
+      height: 260px;
+      border: 0;
+      display: block;
+    }
+    .footer {
+      background: #27347b;
+      color: #fff;
+      text-align: center;
+      font-size: 12px;
+      padding: 12px 10px 20px;
+    }
+
+    @media (max-width: 1100px) {
+      .intro-card {
+        grid-template-columns: 200px 1fr;
+      }
+      .intro-text h1 { font-size: 52px; }
+      .intro-text p { font-size: 18px; }
+      .section-title { font-size: 46px; }
+    }
+
+    @media (max-width: 900px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: center;
+      }
+      .center-brand {
+        margin-left: 0;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .intro-grid { grid-template-columns: 1fr; }
+      .intro-right { display: none; }
+      .intro-card {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        width: calc(100% - 24px);
+        margin: -40px auto 30px;
+        grid-template-columns: 1fr;
+      }
+      .intro-logo { padding-bottom: 10px; }
+      .intro-text { padding: 30px 24px 34px; }
+      .intro-text h1 { font-size: 44px; }
+      .intro-text p { font-size: 17px; }
+      .services-grid,
+      .reviews-grid { grid-template-columns: 1fr; }
+      .section-title { font-size: 40px; }
+      .contact h2 { font-size: 40px; }
+      .chat-box { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      .top-wix { font-size: 12px; }
+      .nav { gap: 16px; }
+      .nav a { font-size: 13px; }
+      .hero { min-height: 280px; }
+      .intro { min-height: auto; }
+      .intro-text h1 { font-size: 34px; }
+      .intro-text p { font-size: 15px; line-height: 1.7; }
+      .plus-btn { font-size: 22px; padding: 12px 18px; }
+      .cta-btn { padding: 14px 22px; font-size: 14px; }
+      .section-title { font-size: 32px; }
+      .services { padding-top: 60px; }
+      .contact h2 { font-size: 34px; }
+      .whatsapp-btn { font-size: 16px; }
+      .floating-whatsapp,
+      .floating-insta { width: 44px; height: 44px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-wix">Este site foi recriado em HTML próprio para publicação gratuita.</div>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand-box">Spartan</div>
+
+      <div class="center-brand">
+        <div class="logo-round" aria-hidden="true"></div>
+        <nav class="nav">
+          <a class="active" href="#home">Home</a>
+          <a href="#sobre">Porque Nos Escolher</a>
+          <a href="#servicos">Nossos Serviços</a>
+          <a href="#contato">Contato</a>
+          <a href="#blog">Blog</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="social-fixed">
+      <a class="facebook" href="#" aria-label="Facebook"></a>
+      <a class="instagram" href="#" aria-label="Instagram"></a>
+      <a class="whatsapp" href="https://wa.me/552131741531" aria-label="WhatsApp"></a>
+    </div>
+  </section>
+
+  <section class="intro" id="sobre">
+    <div class="intro-grid">
+      <div class="intro-left"></div>
+      <div class="intro-right"></div>
+    </div>
+
+    <div class="intro-card">
+      <div class="intro-logo">
+        <div class="logo-round" aria-hidden="true"></div>
+      </div>
+      <div class="intro-text">
+        <h1>Spartan<br>MultiAssistência</h1>
+        <div class="intro-line"></div>
+        <p>
+          Na Spartan Multiassistência, oferecemos soluções especializadas para tecnologia e eletrônicos, com foco em performance, durabilidade e funcionamento eficiente. Nossa equipe é formada por profissionais comprometidos em garantir que sua rotina e seus equipamentos funcionem como esperado.
+        </p>
+        <div class="intro-buttons">
+          <button class="plus-btn" type="button">+</button>
+          <a class="cta-btn" href="#servicos">Saiba Mais</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-box">
+      <div class="chat-head">
+        Precisa de ajuda? Chame no Whatsapp!
+        <small>Clique para falar com um dos nossos atendentes</small>
+      </div>
+      <div class="chat-list">
+        <div class="chat-person">
+          <div class="chat-avatar"></div>
+          <div>
+            <strong>André</strong>
+            <span>Gerente</span>
+            <span class="online">I’m Online</span>
+          </div>
+        </div>
+        <div class="chat-person">
+          <div class="chat-avatar"></div>
+          <div>
+            <strong>Juliane</strong>
+            <span>Vendedora 01</span>
+            <span class="online">I’m Online</span>
+          </div>
+        </div>
+        <div class="chat-person" style="margin-bottom:0;">
+          <div class="chat-avatar"></div>
+          <div>
+            <strong>Juliana</strong>
+            <span>Vendedora 02</span>
+            <span class="online">I’m Online</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="servicos">
+    <div class="services-inner">
+      <h2 class="section-title">Nossos Serviços</h2>
+      <div class="services-grid">
+        <article class="service-card">
+          <h3>De Gamers<br>Para Gamers</h3>
+          <p>Nossos especialistas em performance recomendam as melhores configurações para seu uso. E com isso iremos montar o melhor setup para você com bastante RGB.</p>
+          <a class="read-more" href="#">+ Ler Mais</a>
+        </article>
+
+        <article class="service-card">
+          <h3>Alto<br>Desempenho</h3>
+          <p>Precisando de Workstation poderoso? Aqui na Spartan nossos consultores conseguem lhe ajudar.</p>
+          <a class="read-more" href="#">+ Ler Mais</a>
+        </article>
+
+        <article class="service-card">
+          <h3>Consoles De<br>Última Geração</h3>
+          <p>Trabalhamos com todas as grandes marcas. Na Spartan você encontra Playstation, Xbox e Nintendo Switch.</p>
+          <a class="read-more" href="#">+ Ler Mais</a>
+        </article>
+
+        <article class="service-card">
+          <h3>Notebook e<br>Desktop</h3>
+          <p>Seu notebook está com desempenho reduzido? A Spartan oferece soluções especializadas para otimizar o funcionamento dos seus dispositivos.</p>
+          <a class="read-more" href="#">+ Ler Mais</a>
+        </article>
+
+        <article class="service-card">
+          <h3>VideoGames e<br>Joysticks</h3>
+          <p>Você deu rage e quebrou o controle? Oferecemos soluções especializadas para performance de consoles e acessórios gamers, com foco em durabilidade e uso prolongado.</p>
+          <a class="read-more" href="#">+ Ler Mais</a>
+        </article>
+
+        <article class="service-card">
+          <h3>Macbook, iMac<br>ou Mac Mini/Studio</h3>
+          <p>Mesmo modelos descontinuados podem continuar produtivos. Nossa equipe é especializada em otimizar o desempenho de dispositivos Apple.</p>
+          <a class="read-more" href="#">+ Ler Mais</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+<section class="reviews" id="blog">
+  <div class="reviews-inner">
+    <div class="google-rating">
+      <h3>Avaliações no Google</h3>
+      <p>Veja a experiência de clientes da Spartan MultiAssistência</p>
+    </div>
+
+    <!-- Elfsight Google Reviews -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-b1836169-c697-4e83-a41a-244cb37f0c42" data-elfsight-app-lazy></div>
+  </div>
+</section>
+
+  <section class="contact" id="contato">
+    <h2>Contato</h2>
+    <a class="whatsapp-btn" href="https://wa.me/552131741531">Chamar no Whatsapp</a>
+
+    <p>Tel: (21) 3174-1531</p>
+    <p>Email: faleconosco@spartanma.com.br</p>
+
+    <address>
+      Endereço:<br>
+      Torre Norte Shopping<br>
+      Av. Dom Helder Câmara, Número 5200 - Sala 1021 - Entrada Principal<br>
+      Entrada Secundária Por Dentro do Shopping Na Praça de Alimentação do Segundo Piso<br>
+      Entre Mania de Churrasco e a Riachuelo<br>
+      Rio de Janeiro, RJ<br>
+      CEP: 20771-004
+    </address>
+
+    <div class="map-wrap">
+      <iframe
+        title="Mapa Spartan MultiAssistência"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Av.%20Dom%20Helder%20C%C3%A2mara%205200%20Rio%20de%20Janeiro&output=embed">
+      </iframe>
+    </div>
+  </section>
+
+  <footer class="footer">© 2025 por Spartan MultiAssistência.</footer>
+
+  <a class="floating-whatsapp" href="https://wa.me/552131741531" aria-label="WhatsApp">W</a>
+  <a class="floating-insta" href="#" aria-label="Instagram">◎</a>
+</body>
+</html>
