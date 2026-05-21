@@ -44,10 +44,13 @@
     }
 
     .topbar{background:#f4f6fb;border-bottom:1px solid #d5dff0;color:#2a2a2a;text-align:center;font-size:21px;padding:11px 18px}
-    .header{background:#fff;border-bottom:1px solid #e7e7e7;position:sticky;top:43px;z-index:1000}
-    @media (max-width:768px){.header{top:75px;}}
-    .header-inner{max-width:1700px;margin:0 auto;min-height:144px;padding:0 49px 0 207px;display:flex;align-items:center;justify-content:center;position:relative}
-    .spartan-box{position:fixed;top:127px;left:7px;z-index:1100;width:154px;border:5px solid #273d8e;color:#273d8e;font-size:19px;font-weight:700;line-height:1;text-align:center;padding:14px 11px;background:#fff;text-transform:uppercase;box-shadow:none}
+    
+    /* FIX CRÍTICO CLAUDE: top:0 para alinhar perfeitamente com a topbar sticky */
+    .header{background:#fff;border-bottom:1px solid #e7e7e7;position:sticky;top:0;z-index:1000}
+    
+    /* FIX CRÍTICO CLAUDE: Ajustado top e z-index para o botão flutuante não sobrepor elementos importantes */
+    .spartan-box{position:fixed;top:160px;left:7px;z-index:100;width:154px;border:5px solid #273d8e;color:#273d8e;font-size:19px;font-weight:700;line-height:1;text-align:center;padding:14px 11px;background:#fff;text-transform:uppercase;box-shadow:none}
+    
     .header-center{display:flex;align-items:center;justify-content:center;gap:42px}
     .header-logo{width:74px;height:74px;object-fit:contain;flex:0 0 auto}
     .nav{display:flex;align-items:center;justify-content:center;gap:42px;flex-wrap:nowrap;white-space:nowrap}
@@ -131,7 +134,10 @@
     @media (max-width: 920px){
       .header-center{flex-direction:column;gap:25px}
       .nav{gap:18px;flex-wrap:wrap;white-space:normal}
-      .spartan-box{position:fixed;top:90px;left:7px;width:154px;border:5px solid #273d8e;color:#273d8e;font-size:19px;font-weight:700;line-height:1;text-align:center;padding:14px 11px;background:#fff;text-transform:uppercase;box-shadow:none}
+      
+      /* FIX CRÍTICO CLAUDE: Sincronizado posição mobile para evitar overlaps */
+      .spartan-box{position:fixed;top:160px;left:7px;width:154px;border:5px solid #273d8e;color:#273d8e;font-size:19px;font-weight:700;line-height:1;text-align:center;padding:14px 11px;background:#fff;text-transform:uppercase;box-shadow:none}
+      
       .intro-card{position:relative;left:auto;top:auto;transform:none;width:calc(100% - 42px);margin:-35px auto 28px;grid-template-columns:1fr}
       .intro-band{height:385px}
       .intro{min-height:auto}
@@ -196,7 +202,9 @@
       <div class="intro-card-right">
         <h1>Spartan<br>MultiAssistência</h1>
         <div class="intro-line"></div>
-        <p>Na Spartan Multiassistência, oferecemos soluções especializadas para tecnologia e eletrônicos, com foco em performance, durabilidade e funcionamento eficiente. Nossa equipe é formada por professionals comprometidos em garantir que sua rotina e seus equipamentos funcionem como esperado.</p>
+        
+        <p>Na Spartan Multiassistência, oferecemos soluções especializadas para tecnologia e eletrônicos, com foco em performance, durabilidade e funcionamento eficiente. Nossa equipe é formada por profissionais comprometidos em garantir que sua rotina e seus equipamentos funcionem como esperado.</p>
+        
         <div class="intro-actions">
           <button class="plus-btn" type="button">+</button>
           <a class="more-btn" href="#servicos">Saiba Mais</a>
