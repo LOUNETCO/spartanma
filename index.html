@@ -9,7 +9,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link class="spartan-apple-touch" rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
   <link rel="manifest" href="manifest.json">
@@ -24,19 +24,36 @@
     a{text-decoration:none;color:inherit}
     img{display:block;max-width:100%}
 
-    .topbar{background:#f4f6fb;border-bottom:1px solid #d5dff0;color:#2a2a2a;text-align:center;font-size:21px;padding:11px 18px}
+    /* === SPARTAN TOP BAR === */
+    .spartan-topbar{background:#0d1b2a;color:#fff;font-family:Arial,sans-serif;font-size:14px;line-height:1.3;position:sticky;top:0;z-index:9999;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+    .spartan-topbar__inner{max-width:1200px;margin:0 auto;padding:8px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .spartan-topbar__item,.spartan-topbar__item--static{display:inline-flex;align-items:center;gap:8px;color:#fff;text-decoration:none;white-space:nowrap}
+    .spartan-topbar__item:hover{color:#f5d76e}
+    .spartan-topbar__icon{width:18px;height:18px;flex-shrink:0}
+    .spartan-topbar__cta{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff!important;text-decoration:none;font-weight:700;padding:8px 16px;border-radius:999px;transition:transform .15s,background .15s}
+    .spartan-topbar__cta:hover{background:#1ebe5d;transform:translateY(-1px)}
+    .spartan-topbar__cta-text{display:inline-flex;flex-direction:column;line-height:1.1}
+    .spartan-topbar__cta-line1{font-size:11px;opacity:.9;font-weight:600}
+    .spartan-topbar__cta-line2{font-size:14px;font-weight:800;letter-spacing:.3px}
+    @media (max-width:768px){
+      .spartan-topbar{font-size:12.5px}
+      .spartan-topbar__inner{padding:8px 12px;gap:8px;justify-content:center;text-align:center}
+      .spartan-topbar__item span{font-size:12.5px}
+      .spartan-topbar__item--static{display:none}
+      .spartan-topbar__cta{width:100%;justify-content:center;padding:10px 14px;margin-top:4px}
+    }
 
-    .header{background:#fff;border-bottom:1px solid #e7e7e7;position:sticky;top:0;z-index:1000}
+    .topbar{background:#f4f6fb;border-bottom:1px solid #d5dff0;color:#2a2a2a;text-align:center;font-size:21px;padding:11px 18px}
+    .header{background:#fff;border-bottom:1px solid #e7e7e7;position:sticky;top:43px;z-index:1000}
+    @media (max-width:768px){.header{top:75px;}}
     .header-inner{max-width:1700px;margin:0 auto;min-height:144px;padding:0 49px 0 207px;display:flex;align-items:center;justify-content:center;position:relative}
-    .spartan-box{position:fixed;top:84px;left:7px;z-index:1100;width:154px;border:5px solid #273d8e;color:#273d8e;font-size:19px;font-weight:700;line-height:1;text-align:center;padding:14px 11px;background:#fff;text-transform:uppercase;box-shadow:none}
+    .spartan-box{position:fixed;top:127px;left:7px;z-index:1100;width:154px;border:5px solid #273d8e;color:#273d8e;font-size:19px;font-weight:700;line-height:1;text-align:center;padding:14px 11px;background:#fff;text-transform:uppercase;box-shadow:none}
     .header-center{display:flex;align-items:center;justify-content:center;gap:42px}
     .header-logo{width:74px;height:74px;object-fit:contain;flex:0 0 auto}
     .nav{display:flex;align-items:center;justify-content:center;gap:42px;flex-wrap:nowrap;white-space:nowrap}
     .nav a{font-size:19px;font-weight:600;color:#24357f;transition:color .2s ease}
     .nav a.active,.nav a:hover{color:#ce503d}
-
     .hero{position:relative;height:796px;background:url('f9b47f103593419f828e0c802e211549.avif') center center/cover no-repeat}
-
     .intro{position:relative;background:#ececec;min-height:525px}
     .intro-band{height:525px;background:url('nsplsh_665773543350706f452d41~mv2_d_3000_2000_s_2.avif') center center/cover no-repeat;position:relative}
     .intro-band::before{content:'';position:absolute;left:137px;top:49px;font-size:154px;line-height:1;color:#000;font-family:Arial,sans-serif}
@@ -52,7 +69,6 @@
     .plus-btn:hover,.more-btn:hover{transform:translateY(-1px);filter:brightness(.96)}
     .plus-btn{background:#24357f;color:#fff;font-size:32px;line-height:1;padding:16px 21px}
     .more-btn{background:#d65440;color:#fff;font-size:18px;font-weight:500;padding:19px 32px}
-
     .chat-box{position:fixed;right:25px;left:auto;top:476px;width:256px;background:#fff;border-radius:7px;box-shadow:0 14px 32px rgba(0,0,0,.16);overflow:hidden;z-index:90}
     .chat-head{background:#28d272;color:#fff;padding:14px;font-size:13px;line-height:1.45;font-weight:700;position:relative}
     .chat-head small{display:block;margin-top:5px;font-size:10px;font-weight:400}
@@ -64,10 +80,8 @@
     .chat-person strong{display:block;font-size:13px;color:#222}
     .chat-person span{display:block;font-size:10px;color:#6a6a6a}
     .status{display:inline-block;margin-top:4px;background:#48d16d;color:#fff;font-size:9px;padding:2px 7px;border-radius:5px}
-
     .floating-wa{position:fixed;right:18px;bottom:18px;left:auto;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;box-shadow:0 14px 32px rgba(0,0,0,.18);z-index:88;transition:transform .2s ease;background:#25d366;font-size:25px}
     .floating-wa:hover{transform:translateY(-2px) scale(1.03)}
-
     .services{position:relative;min-height:910px;background-image:linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.08)),url('nsplsh_9636007f2ca44c92a6c50ad2f8012af1~mv2.avif'),url('nsplsh_284fef7a803d4d548d2db79abe9bbd26~mv2.avif'),url('nsplsh_284fef7a803d4d548d2db79abe9bbd26~mv2.avif');background-repeat:no-repeat,no-repeat,no-repeat,no-repeat;background-position:top center,top center,left bottom,right bottom;background-size:100% 298px,cover,50% calc(100% - 298px),50% calc(100% - 298px);padding:28px 39px 42px}
     .services::before,.reviews::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.08)}
     .services-inner,.reviews-inner{position:relative;z-index:2;max-width:1500px;margin:0 auto}
@@ -78,13 +92,11 @@
     .service-card h3{color:#24357f;font-size:23px;line-height:1.12;font-weight:500;text-decoration:underline;margin-bottom:14px}
     .service-card p{color:#4b4b4b;font-size:14px;line-height:1.85}
     .read-more{display:inline-block;margin-top:11px;font-size:14px;color:#d46f58}
-
     .reviews{position:relative;min-height:455px;background:url('nsplsh_a2e45a0201244411ba8762daf54e1a01~mv2.avif') center center/cover no-repeat;padding:25px 35px 32px}
     .google-rating{text-align:center;color:#fff;margin-bottom:14px}
     .google-rating h3{font-size:21px;font-weight:600;margin-bottom:4px}
     .google-rating p{font-size:14px;margin-bottom:7px}
     .elfsight-wrap{max-width:1330px;margin:0 auto}
-
     .contact{background:#24357f;text-align:center;color:#fff;padding:46px 35px 21px}
     .contact h2{font-size:32px;font-weight:400;margin-bottom:18px;letter-spacing:.5px}
     .contact-btn{display:inline-block;background:#b8d85a;color:#fff;font-size:16px;font-weight:500;padding:12px 28px;border-radius:4px;margin-bottom:18px;transition:transform .2s ease,filter .2s ease}
@@ -93,10 +105,8 @@
     .map-wrap{max-width:753px;margin:18px auto 0;background:#fff}
     .map-wrap iframe{display:block;width:100%;height:324px;border:0}
     .back-top{display:inline-block;color:#fff;font-size:25px;line-height:1;margin-top:11px}
-
     .seo-links{background:#eef2ff;padding:18px 35px;text-align:center;border-top:1px solid #dbe3ff;border-bottom:1px solid #dbe3ff}
     .seo-links a{display:inline-block;margin:7px 14px;color:#24357f;font-size:14px;font-weight:600}
-
     .seo-boost{background:#fff;padding:38px 35px;border-bottom:1px solid #e7ecfa}
     .seo-boost-inner{max-width:1200px;margin:0 auto;text-align:center}
     .seo-boost h2{font-size:30px;font-weight:600;color:#24357f;margin-bottom:12px}
@@ -107,7 +117,6 @@
     .seo-boost-card h3{font-size:18px;color:#24357f;margin-bottom:8px}
     .seo-boost-card p{font-size:13px;line-height:1.7;color:#5a5a5a;margin-bottom:10px}
     .seo-boost-card a{display:inline-block;color:#ce503d;font-size:13px;font-weight:600}
-
     .footer{background:#24357f;color:#fff;text-align:center;font-size:11px;padding:9px 18px 18px}
 
     @media (max-width: 1200px){
@@ -122,7 +131,7 @@
     @media (max-width: 920px){
       .header-center{flex-direction:column;gap:25px}
       .nav{gap:18px;flex-wrap:wrap;white-space:normal}
-      .spartan-box{position:fixed;top:18px;left:7px;width:154px;border:5px solid #273d8e;color:#273d8e;font-size:19px;font-weight:700;line-height:1;text-align:center;padding:14px 11px;background:#fff;text-transform:uppercase;box-shadow:none}
+      .spartan-box{position:fixed;top:90px;left:7px;width:154px;border:5px solid #273d8e;color:#273d8e;font-size:19px;font-weight:700;line-height:1;text-align:center;padding:14px 11px;background:#fff;text-transform:uppercase;box-shadow:none}
       .intro-card{position:relative;left:auto;top:auto;transform:none;width:calc(100% - 42px);margin:-35px auto 28px;grid-template-columns:1fr}
       .intro-band{height:385px}
       .intro{min-height:auto}
@@ -136,6 +145,25 @@
 </head>
 <body>
   
+  <div class="spartan-topbar" role="region" aria-label="Localização e contato Spartan">
+    <div class="spartan-topbar__inner">
+      <a class="spartan-topbar__item" href="https://maps.google.com/?q=Spartan+MultiAssistencia+Norte+Shopping" target="_blank" rel="noopener" aria-label="Ver localização no Google Maps">
+        <svg class="spartan-topbar__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s-7-7.58-7-12a7 7 0 1 1 14 0c0 4.42-7 12-7 12z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+        <span><strong>Norte Shopping</strong> — Torre Norte, Sala 1021</span>
+      </a>
+      <div class="spartan-topbar__item spartan-topbar__item--static">
+        <svg class="spartan-topbar__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Seg a Sáb</span>
+      </div>
+      <a class="spartan-topbar__cta" href="https://wa.me/552131741531?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Spartan" target="_blank" rel="noopener" aria-label="Falar no WhatsApp (21) 3174-1531">
+        <svg class="spartan-topbar__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 3.2 17l-1.2 4.4 4.5-1.2A11 11 0 1 0 20.5 3.5zM12 20a8 8 0 0 1-4.1-1.1l-.3-.2-2.7.7.7-2.6-.2-.3A8 8 0 1 1 12 20zm4.6-6c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.5.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.7.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3z"/></svg>
+        <span class="spartan-topbar__cta-text">
+          <span class="spartan-topbar__cta-line1">WhatsApp</span>
+          <span class="spartan-topbar__cta-line2">(21) 3174-1531</span>
+        </span>
+      </a>
+    </div>
+  </div>
   <a class="spartan-box" href="#home" aria-label="Voltar ao topo">SPARTAN</a>
 
   <header class="header">
@@ -168,7 +196,7 @@
       <div class="intro-card-right">
         <h1>Spartan<br>MultiAssistência</h1>
         <div class="intro-line"></div>
-        <p>Na Spartan Multiassistência, oferecemos soluções especializadas para tecnologia e eletrônicos, com foco em performance, durabilidade e funcionamento eficiente. Nossa equipe é formada por profissionais comprometidos em garantir que sua rotina e seus equipamentos funcionem como esperado.</p>
+        <p>Na Spartan Multiassistência, oferecemos soluções especializadas para tecnologia e eletrônicos, com foco em performance, durabilidade e funcionamento eficiente. Nossa equipe é formada por professionals comprometidos em garantir que sua rotina e seus equipamentos funcionem como esperado.</p>
         <div class="intro-actions">
           <button class="plus-btn" type="button">+</button>
           <a class="more-btn" href="#servicos">Saiba Mais</a>
