@@ -44,10 +44,6 @@
     .logo{height:52px}
     nav{display:flex;gap:18px;flex-wrap:wrap}
     nav a{color:#1d2d5a;font-weight:bold}
-    .hero{height:320px;background:url('placa_mae(1).avif') center/cover no-repeat;display:flex;align-items:center;justify-content:center}
-    .hero-box{background:rgba(255,255,255,.93);padding:22px 34px;text-align:center}
-    .hero-box h1{color:#1d2d5a;font-size:34px;margin-bottom:8px}
-    .hero-box p{font-size:15px;color:#444}
     .container{max-width:1100px;margin:0 auto;padding:40px 20px 60px}
     .content{background:#fff;padding:36px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
     h2{color:#1d2d5a;margin:26px 0 10px}
@@ -61,11 +57,60 @@
     footer{background:#2d3c7c;color:#fff;text-align:center;padding:35px 20px;font-size:14px}
     @media (max-width:800px){
       .cards{grid-template-columns:1fr}
-      .hero-box h1{font-size:28px}
     }
+
+    /* === SPARTAN TOP BAR === */
+    .spartan-topbar{background:#0d1b2a;color:#fff;font-family:Arial,sans-serif;font-size:14px;line-height:1.3;position:sticky;top:0;z-index:9999;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+    .spartan-topbar__inner{max-width:1200px;margin:0 auto;padding:8px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .spartan-topbar__item,.spartan-topbar__item--static{display:inline-flex;align-items:center;gap:8px;color:#fff;text-decoration:none;white-space:nowrap}
+    .spartan-topbar__item:hover{color:#f5d76e}
+    .spartan-topbar__icon{width:18px;height:18px;flex-shrink:0}
+    .spartan-topbar__cta{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff!important;text-decoration:none;font-weight:700;padding:8px 16px;border-radius:999px;transition:transform .15s,background .15s}
+    .spartan-topbar__cta:hover{background:#1ebe5d;transform:translateY(-1px)}
+    .spartan-topbar__cta-text{display:inline-flex;flex-direction:column;line-height:1.1}
+    .spartan-topbar__cta-line1{font-size:11px;opacity:.9;font-weight:600}
+    .spartan-topbar__cta-line2{font-size:14px;font-weight:800;letter-spacing:.3px}
+    @media (max-width:768px){.spartan-topbar{font-size:12.5px}.spartan-topbar__inner{padding:8px 12px;gap:8px;justify-content:center;text-align:center}.spartan-topbar__item span{font-size:12.5px}.spartan-topbar__item--static{display:none}.spartan-topbar__cta{width:100%;justify-content:center;padding:10px 14px;margin-top:4px}}
+
+    /* === HERO SPARTAN PREMIUM === */
+    /* CLAUDE FIX: Confirmado o nome do arquivo para 'placa_mae(1).avif' idêntico ao do repositório da imagem */
+    .hero--premium{position:relative;background:url('placa_mae(1).avif') center/cover no-repeat #0a1426;color:#fff;padding:64px 16px;overflow:hidden;height:auto;display:block}
+    .hero--premium .hero__overlay{position:absolute;inset:0;background:linear-gradient(120deg,rgba(10,20,38,.88) 0%,rgba(10,20,38,.72) 60%,rgba(10,20,38,.55) 100%);z-index:1}
+    .hero--premium .hero__inner{position:relative;z-index:2;max-width:880px;margin:0 auto;text-align:left}
+    .hero--premium .hero__badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:6px 14px;border-radius:999px;font-size:14px;margin-bottom:20px;backdrop-filter:blur(4px)}
+    .hero--premium .hero__badge strong{color:#f5d76e}
+    .hero--premium .hero__title{font-size:clamp(24px,4.2vw,40px);line-height:1.2;font-weight:800;margin:0 0 16px;letter-spacing:-.5px;color:#fff}
+    .hero--premium .hero__title--accent{color:#f5d76e;display:inline-block}
+    .hero--premium .hero__subtitle{font-size:16px;line-height:1.6;margin:0 0 22px;max-width:720px;opacity:.95;color:#fff}
+    .hero--premium .hero__proof{list-style:none;padding:0;margin:0 0 28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px;font-size:15px;max-width:640px}
+    .hero--premium .hero__cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:14px}
+    .hero--premium .hero__cta{display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;font-weight:800;font-size:17px;text-decoration:none;transition:transform .15s,box-shadow .15s,background .15s}
+    .hero--premium .hero__cta--primary{background:#25D366;color:#fff;box-shadow:0 8px 24px rgba(37,211,102,.35)}
+    .hero--premium .hero__cta--primary:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 12px 28px rgba(37,211,102,.45)}
+    .hero--premium .hero__micro{font-size:13px;opacity:.8;margin:8px 0 0}
+    @media (max-width:640px){.hero--premium{padding:40px 16px}.hero--premium .hero__proof{grid-template-columns:1fr}.hero--premium .hero__cta{width:100%;justify-content:center;font-size:16px;padding:14px 20px}.hero--premium .hero__cta-row{flex-direction:column}}
   </style>
 </head>
 <body>
+  <div class="spartan-topbar" role="region" aria-label="Localização e contato Spartan">
+    <div class="spartan-topbar__inner">
+      <a class="spartan-topbar__item" href="https://maps.google.com/?q=Spartan+MultiAssistencia+Norte+Shopping" target="_blank" rel="noopener" aria-label="Ver localização no Google Maps">
+        <svg class="spartan-topbar__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22s-7-7.58-7-12a7 7 0 1 1 14 0c0 4.42-7 12-7 12z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+        <span><strong>Norte Shopping</strong> — Torre Norte, Sala 1021</span>
+      </a>
+      <div class="spartan-topbar__item spartan-topbar__item--static">
+        <svg class="spartan-topbar__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Seg a Sáb</span>
+      </div>
+      <a class="spartan-topbar__cta" href="https://wa.me/552131741531?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Spartan" target="_blank" rel="noopener" aria-label="Falar no WhatsApp (21) 3174-1531">
+        <svg class="spartan-topbar__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 0 0 3.2 17l-1.2 4.4 4.5-1.2A11 11 0 1 0 20.5 3.5zM12 20a8 8 0 0 1-4.1-1.1l-.3-.2-2.7.7.7-2.6-.2-.3A8 8 0 1 1 12 20zm4.6-6c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.5.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.7.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3z"/></svg>
+        <span class="spartan-topbar__cta-text">
+          <span class="spartan-topbar__cta-line1">WhatsApp</span>
+          <span class="spartan-topbar__cta-line2">(21) 3174-1531</span>
+        </span>
+      </a>
+    </div>
+  </div>
   <header>
     <div class="header-inner">
       <a href="index.html"><img class="logo" src="LOGO_SPARTAN.png" alt="Spartan MultiAssistência"></a>
@@ -78,107 +123,128 @@
     </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-box">
-      <h1>Conserto de Videogame no RJ</h1>
-      <p>Soluções para consoles com falhas, aquecimento e perda de desempenho</p>
+<section class="hero--premium" aria-label="Conserto de Videogame no Rio de Janeiro">
+  <div class="hero__overlay"></div>
+  <div class="hero__inner">
+    <div class="hero__badge">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="#f5b800"><path d="M12 2l2.9 6.9 7.5.6-5.7 4.9 1.8 7.3L12 17.8 5.5 21.7l1.8-7.3L1.6 9.5l7.5-.6L12 2z"/></svg>
+      <span><strong style="color:#f5d76e;">5.0</strong> · 1.736 avaliações · Peças Originais com Garantia</span>
     </div>
-  </section>
+    <h1 class="hero__title">
+      PS5 barulhento, Xbox desligando sozinho ou controle com Drift?<br>
+      <span class="hero__title--accent">Manutenção preventiva e reparo de placa especializada em consoles.</span>
+    </h1>
+    <p class="hero__subtitle">
+      Troca de pasta térmica líquida-metálica (Conductonaut) em PS5, substituição de analógicos Alps originais e reparo de portas HDMI. <strong>No Norte Shopping — Torre Norte, Sala 1021.</strong>
+    </p>
+
+    <ul class="hero__proof">
+      <li>✓ Pasta líquida-metálica original</li>
+      <li>✓ Reparo de placa BGA/microsolda</li>
+      <li>✓ Analógicos Alps originais</li>
+      <li>✓ Garantia de 90 dias</li>
+    </ul>
+
+    <div class="hero__cta-row">
+      <a href="https://wa.me/552131741531?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Spartan%20consertar%20meu%20videogame" target="_blank" rel="noopener" class="hero__cta hero__cta--primary">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3.2 17l-1.2 4.4 4.5-1.2A11 11 0 1 0 20.5 3.5zM12 20a8 8 0 0 1-4.1-1.1l-.3-.2-2.7.7.7-2.6-.2-.3A8 8 0 1 1 12 20zm4.6-6c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.5.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.3 0 1.4 1 2.7 1.2 2.9.1.2 2 3 4.8 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.7.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3z"/></svg>
+        Falar com o técnico de videogame agora
+      </a>
+    </div>
+  </div>
+</section>
 
   <section class="container">
     <div class="content">
-      <p>A Spartan MultiAssistência oferece <strong>conserto de videogame no Rio de Janeiro</strong> para clientes que precisam recuperar a estabilidade, o desempenho e a experiência de uso do console no dia a dia.</p>
+      <p>A Spartan MultiAssistência oferece <strong>conserto de videogame no Rio de Janeiro</strong> com qualidade de bancada profissional. Esqueça soluções amadoras: trabalhamos com maquinário de microsolda avançada para devolver a vida ao seu console com garantia real de balcão.</p>
 
-      <h2>Sinais de que seu videogame precisa de atenção</h2>
+      <h2>Sinais de que seu hardware precisa de atenção imediata</h2>
       <div class="cards">
         <div class="card">
-          <strong>Travamentos</strong>
-          Jogos instáveis, falhas durante o uso e experiência prejudicada.
+          <strong>Congelamento de imagem</strong>
+          Jogos crashando constantemente, artefatos visuais e instabilidade térmica no meio da gameplay.
         </div>
         <div class="card">
-          <strong>Superaquecimento</strong>
-          Aquecimento elevado e queda de performance ao longo da jogatina.
+          <strong>Cooler em Modo Turbina</strong>
+          Console aquecendo excessivamente e operando com ruído intolerável devido ao desgaste térmico.
         </div>
         <div class="card">
-          <strong>Baixo desempenho</strong>
-          Lentidão, comportamento irregular e perda de fluidez.
+          <strong>Analógicos desalinhados (Drift)</strong>
+          Personagens ou câmera se movendo sozinhos nos menus e jogos devido ao desgaste físico das trilhas.
         </div>
         <div class="card">
-          <strong>Problemas gerais de uso</strong>
-          Instabilidade que afeta conforto e consistência no console.
+          <strong>Ausência de Sinal de Vídeo</strong>
+          Console liga acendendo as luzes indicadoras de status, mas não transmite áudio ou imagem para a TV.
         </div>
       </div>
 
-      <h2>Problemas comuns por plataforma</h2>
+      <h2>Soluções Avançadas por Ecossistema</h2>
 
-      <h3>PlayStation</h3>
+      <h3>PlayStation (PS4 / PS5)</h3>
       <div class="cards">
         <div class="card">
-          <strong>Ejeção automática de disco</strong>
-          Em alguns modelos mais antigos, o console pode ejetar o disco sozinho por sensibilidade excessiva no sensor.
+          <strong>Ejeção automática e Sensores</strong>
+          Ajuste eletrônico de capacitores de sensores mecânicos e reparos no motor de engate de discos.
         </div>
         <div class="card">
-          <strong>Luz azul da morte (BLOD)</strong>
-          O videogame liga, mas não gera imagem, podendo estar ligado a falhas internas de funcionamento.
+          <strong>Luz Azul da Morte (BLOD)</strong>
+          Tratamento de solda fria através de retrabalho BGA (Reflow/Reballing) do chipset gráfico e APU.
         </div>
         <div class="card">
-          <strong>Superaquecimento e ruído</strong>
-          Acúmulo de sujeira e desgaste térmico podem fazer o cooler trabalhar em rotação alta, com barulho excessivo.
+          <strong>Preventiva de PS5 com Metal Líquido</strong>
+          Limpeza química e substituição de composto líquido-metálico original (Conductonaut) para sanar quedas térmicas.
         </div>
         <div class="card">
-          <strong>DualSense Drift</strong>
-          No PS5, o analógico do controle pode puxar para um lado sozinho, prejudicando a jogabilidade.
+          <strong>Substituição de Analógicos DualSense</strong>
+          Troca completa do potenciômetro digital por componentes mecânicos Alps originais de fábrica.
         </div>
       </div>
 
-      <h3>Xbox</h3>
+      <h3>Xbox (One / Series X|S)</h3>
       <div class="cards">
         <div class="card">
-          <strong>Falha no leitor de disco</strong>
-          Dificuldade para reconhecer jogos físicos ou falhas no carregamento.
+          <strong>Recuperação de Leitor Óptico</strong>
+          Substituição de unidades de laser descalibradas e alinhamento mecânico de bandejas emperradas.
         </div>
         <div class="card">
-          <strong>Problemas no HD interno</strong>
-          Lentidão, travamentos ou dificuldade de carregar o sistema e jogos.
+          <strong>Upgrade de HDD para SSD Interno</strong>
+          Substituição de discos rígidos mecânicos lentos por SSDs de alta velocidade, reduzindo loadings a zero.
         </div>
         <div class="card">
-          <strong>Fonte com falha</strong>
-          Em alguns modelos, problemas na fonte podem impedir o console de ligar corretamente.
+          <strong>Reparo de Fontes de Alimentação</strong>
+          Análise de oscilação elétrica de fontes internas e substituição de capacitores estufados.
         </div>
         <div class="card">
-          <strong>Desligamento inesperado</strong>
-          Pode acontecer em uso intenso, normalmente associado a aquecimento ou falhas na dissipação térmica.
+          <strong>Desligamentos em Carga Máxima</strong>
+          Correção de dissipação de calor deficiente em chips gráficos com aplicação de pastas estáveis.
         </div>
       </div>
 
-      <h3>Nintendo Switch</h3>
+      <h3>Nintendo Switch (V1, V2, Lite e OLED)</h3>
       <div class="cards">
         <div class="card">
-          <strong>Joy-Con Drift</strong>
-          Os personagens se movem sozinhos devido ao desgaste dos analógicos.
+          <strong>Reparo Definitivo de Joy-Con Drift</strong>
+          Substituição modular rápida dos eixos de controle analógico por peças novas com calibração via software.
         </div>
         <div class="card">
-          <strong>Falhas nos botões SL e SR</strong>
-          Os botões laterais podem parar de responder com o tempo de uso.
+          <strong>Malhas e Flats Laterais (SL/SR)</strong>
+          Troca de cabos flats rompidos e reparo de barramentos de fixação dos trilhos de metal do console.
         </div>
         <div class="card">
-          <strong>Desgaste da bateria</strong>
-          Em modelos mais antigos, a autonomia pode cair bastante com o tempo.
+          <strong>Substituição de Células de Bateria</strong>
+          Troca de baterias estufadas ou com perda cíclica de carga para devolução da autonomia portátil.
         </div>
         <div class="card">
-          <strong>Conector de carga USB-C</strong>
-          Danos físicos podem impedir carregamento ou transmissão de imagem para o dock.
+          <strong>Troca de Conector USB-C</strong>
+          Reparo em microscópio eletrônico de pinos danificados por inserção errônea no dock original.
         </div>
       </div>
 
-      <h2>Atendimento para quem joga de verdade</h2>
-      <p>Sabemos o quanto o videogame faz parte da rotina de lazer e até de trabalho de muitos clientes. Por isso, nosso atendimento busca restaurar uma experiência confiável e agradável, com foco em resultado real.</p>
-
-      <h2>Mais confiança para seu setup gamer</h2>
-      <p>Além do console, também atendemos demandas ligadas ao melhor aproveitamento do ambiente gamer, sempre com foco em desempenho, conforto e continuidade de uso.</p>
+      <h2>Manutenção especializada de verdade</h2>
+      <p>Entendemos que o console é um investment alto de lazer. Por isso, na Spartan você acompanha o diagnóstico e conta com laboratório próprio no Norte Shopping, garantindo total segurança para o seu equipamento.</p>
 
       <div class="cta">
-        <a class="btn" href="https://wa.me/552131741531?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20de%20conserto%20de%20videogame%20RJ">Falar no WhatsApp</a>
+        <a class="btn" href="https://wa.me/552131741531?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20de%20conserto%20de%20videogame%20RJ">Falar com o especialista em Games</a>
       </div>
     </div>
   </section>
