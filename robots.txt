@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Bloquear assets internos sem valor de busca
+Disallow: /sw.js
+Disallow: /manifest.json
+
+Sitemap: https://www.spartanma.com.br/sitemap.xml
